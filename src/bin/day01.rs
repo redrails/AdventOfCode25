@@ -36,7 +36,7 @@ fn solve_part2(input: &Vec<&str>) -> i32 {
 
     // Not efficient but since the input isn't huge it's fine
     // Looping through each "click" and finding the amount of 0 hits
-    // Still O(n)
+    // Complexity: O(n^2)
     for line in input {
         let amount: i32 = line[1..].trim().parse().unwrap();
         for _ in 0..amount {
