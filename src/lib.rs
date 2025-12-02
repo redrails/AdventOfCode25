@@ -2,3 +2,17 @@
 pub fn read_lines(input: &str) -> impl Iterator<Item = &str> {
     input.lines().map(|line| line.trim())
 }
+
+// Read input into vec split by comma
+pub fn read_csv(input: &str) -> Vec<(i64, i64)> {
+    input
+        .split(',')
+        .map(|part| {
+            let parts: Vec<_> = part.split('-').collect();
+            (
+                parts[0].trim().parse::<i64>().unwrap(),
+                parts[1].trim().parse::<i64>().unwrap(),
+            )
+        })
+        .collect()
+}
