@@ -2,7 +2,7 @@ use aoc25::read_csv;
 
 // Day 2
 // Output: Solution -> Part1: 18700015741 || Part2: 20077272987
-pub fn main() {
+fn main() {
     let input = include_str!("../../inputs/day02.txt");
 
     let arr: Vec<(i64, i64)> = read_csv(input);
@@ -12,7 +12,7 @@ pub fn main() {
 }
 
 // Complexity: O(n*m) -> O(n) where n is the number of pairs and m is the size of the digits in the pairs
-pub fn solve(input: &[(i64, i64)]) -> (i64, i64) {
+fn solve(input: &[(i64, i64)]) -> (i64, i64) {
     let mut sum1 = 0;
     let mut sum2 = 0;
     for &(x, y) in input {
