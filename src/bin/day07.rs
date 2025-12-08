@@ -1,7 +1,7 @@
 use aoc25::read_lines;
 use std::collections::{HashMap, HashSet, VecDeque};
 
-// Day 5 - I found this to be a difficult one!
+// Day 7 - I found this to be a difficult one!
 // Output: Solution -> Part1: 1667 || Part2: 62943905501815
 fn main() {
     let input = include_str!("../../inputs/day07.txt");
