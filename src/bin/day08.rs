@@ -1,4 +1,4 @@
-use aoc25::read_lines;
+use aoc25::{parse_input_as_nums, read_lines};
 
 // Day 8
 // Output: Solution -> Part1: 80446 || Part2: 51294528
@@ -13,7 +13,7 @@ fn main() {
 
 fn solve(input: &[&str]) -> (i32, i32) {
     // Parse to Vec<Vec<i64>>
-    let points = parse_points(input);
+    let points = parse_input_as_nums(input);
     let mut edges = build_edges(&points);
     // Sort the edges as they
     sort_edges_by_distance(&mut edges);
@@ -71,19 +71,6 @@ fn closest_unconnected_pairs_part2(edges: &[(f64, usize, usize)], points: &[Vec<
         }
     }
     0
-}
-
-// Parse "x,y,z" strings into Vec<Vec<i64>>
-fn parse_points(input: &[&str]) -> Vec<Vec<i64>> {
-    input
-        .iter()
-        .filter(|line| !line.trim().is_empty())
-        .map(|line| {
-            line.split(',')
-                .map(|p| p.trim().parse::<i64>().unwrap())
-                .collect()
-        })
-        .collect()
 }
 
 // Build (distance, i, j) for all pairs using euclidean_distance
